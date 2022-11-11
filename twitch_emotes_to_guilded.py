@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-""" twitch_emotes.py: A script to get all Twitch Global Emotes and generate emote packs for use on Guilded.gg."""
+""" twitch_emotes_to_guilded.py: A script to get all Twitch Global Emotes and generate emote packs for use on Guilded.gg."""
 
 # Ownership, licensing and usage documentation
 # can be found at the bottom of this script.
@@ -57,7 +57,7 @@ for emote in emotes['globalEmotes']:
         # Reset the emotes list for the next batch.
         emotesList = []
 
-print('Done! Kappa')
+print('Finished generating JSON files. You can find them in the emotes/ folder.')
 
 """
 @Author = "Ashen"
