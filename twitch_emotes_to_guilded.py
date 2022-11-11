@@ -104,6 +104,7 @@ print('Visit https://github.com/ashcorpdev/twitch-emotes-to-guilded for more inf
 Credit to:
 - /u/rtainc on Reddit (Initial boilerplate of the script)
 - ravenbtw at raven.fo (Created twitch-database, which is used for grabbing the global emotes list)
+- sibosutd (For progress_bar.py, modified in this script).
 
 All emotes are the property of Twitch Interactive.
 """
