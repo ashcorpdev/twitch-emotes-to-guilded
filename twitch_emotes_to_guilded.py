@@ -32,12 +32,14 @@ print("----")
 
 if not os.path.exists('./emotes'):
     os.makedirs('./emotes')
+
+# Define our variables
+#----------------------#
 print('\nFetching global emote list...\n')
+
 emotes = json.load(urllib.request.urlopen(
     'https://api.twitchdatabase.com/global-emotes'))
 emotesList = []
-
-# Emote packs can only contain up to 30 emotes.
 packNo = 0
 emoteCount = 0
 totalCounted = 0
@@ -45,6 +47,9 @@ emotesToProcess = len(emotes['globalEmotes'])
 
 print("Emotes to process: " + str(emotesToProcess) + "\n")
 
+
+# Process the emotes
+#----------------------#
 for emote in emotes['globalEmotes']:
     if ":" not in emote['name']:
         emote = {
