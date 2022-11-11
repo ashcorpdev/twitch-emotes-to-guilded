@@ -39,6 +39,14 @@ Once you've got access to your files somehow, simply do the following:
 5. You will be prompted as to whether or not you want to add the emotes. 
 6. Click 'Import' again and your emotes should appear in a few moments.
 
+# Limitations
+
+This script only grabs the Twitch Global Emotes at the time you run it and won't be able to update them. 
+
+Additionally, if you try to add the same emote pack to Guilded multiple times, you'll end up with duplicated emotes in your Emotes section. 
+
+This isn't something I can do something about, so you'll either have to stick to the ones you get at the time, or maybe host them on a server where you don't have any other emotes.
+
 # How it works
 
 1. The script will reach out to the https://twitchdatabase.com API to get a list of global emotes.
