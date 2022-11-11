@@ -8,11 +8,31 @@
 
 import urllib.request
 import os
+import sys
 import json
+import time
+
+banner = """
+                                                                       
+                       ,,                                              
+      db             `7MM         .g8\"""bgd                            
+     ;MM:              MM       .dP'     `M                            
+    ,V^MM.    ,pP"Ybd  MMpMMMb. dM'       ` ,pW"Wq.`7Mb,od8 `7MMpdMAo. 
+   ,M  `MM    8I   `"  MM    MM MM         6W'   `Wb MM' "'   MM   `Wb 
+   AbmmmqMA   `YMMMa.  MM    MM MM.        8M     M8 MM       MM    M8 
+  A'     VML  L.   I8  MM    MM `Mb.     ,'YA.   ,A9 MM       MM   ,AP 
+.AMA.   .AMMA.M9mmmP'.JMML  JMML. `"bmmmd'  `Ybmd9'.JMML.     MMbmmd'  
+                                                              MM       
+                                                            .JMML.     
+"""
+
+print(banner)
+print("Guilded Emote Pack Generator for Twitch Global Emotes v1.0.0")
+print("----")
 
 if not os.path.exists('./emotes'):
     os.makedirs('./emotes')
-print('Grabbing emote list...')
+print('\nFetching global emote list...\n')
 emotes = json.load(urllib.request.urlopen(
     'https://api.twitchdatabase.com/global-emotes'))
 emotesList = []
@@ -20,9 +40,10 @@ emotesList = []
 # Emote packs can only contain up to 30 emotes.
 packNo = 0
 emoteCount = 0
+totalCounted = 0
 emotesToProcess = len(emotes['globalEmotes'])
 
-print("Emotes to process: " + str(emotesToProcess))
+print("Emotes to process: " + str(emotesToProcess) + "\n")
 
 for emote in emotes['globalEmotes']:
     if ":" not in emote['name']:
@@ -33,11 +54,9 @@ for emote in emotes['globalEmotes']:
 
         newEmote = json.dumps(emote)
         emotesList.append(emote)
-        # Increment the count for emotes processed.
-        emoteCount += 1
-        print("Processing: " + emote['name'])
+        #print("Processing: " + emote['name'])
     if emoteCount == 30:
-        print("Creating pack for batch count: " + str(packNo))
+        #print("Creating file for pack #" + str(packNo+1))
         # Reset the emote count.
         emoteCount = 0
 
@@ -56,9 +75,20 @@ for emote in emotes['globalEmotes']:
         packNo += 1
         # Reset the emotes list for the next batch.
         emotesList = []
+    
+    # Increment the count for emotes processed.
+    emoteCount += 1
+    totalCounted += 1
+    percent = 100.0*totalCounted/emotesToProcess
+    sys.stdout.write('\r')
+    sys.stdout.write("Progress: [{:{}}] {:>3}%"
+                     .format('='*int(percent/(100.0/30)),
+                             30, int(percent)))
+    sys.stdout.flush()
+    time.sleep(0.002)
 
-print('Finished generating JSON files. You can find them in the emotes/ folder.')
-
+print('\n\nFinished generating JSON files. You can find them in the emotes/ folder.\n')
+print('Visit https://github.com/ashcorpdev/twitch-emotes-to-guilded for more information on how to host these files.\n')
 """
 @Author = "Ashen"
 @Licence = "MIT"
