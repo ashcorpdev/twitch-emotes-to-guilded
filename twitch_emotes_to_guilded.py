@@ -54,9 +54,7 @@ for emote in emotes['globalEmotes']:
 
         newEmote = json.dumps(emote)
         emotesList.append(emote)
-        #print("Processing: " + emote['name'])
     if emoteCount == 30:
-        #print("Creating file for pack #" + str(packNo+1))
         # Reset the emote count.
         emoteCount = 0
 
