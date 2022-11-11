@@ -20,6 +20,8 @@ You'll need to host these `.json` files somewhere accessible on the internet.
 
 One way to do this is to upload them to your Guilded server, and then click the 'Download' option, which will give you the link to the JSON file. 
 
+![](https://img.guildedcdn.com/ContentMediaGenericFiles/7a07d80e79a36a5f879be3b7723342c2-Full.webp?w=608&h=96)
+
 Alternatively, you could host them on a file-sharing site such as Dropbox, Google Drive etc. As long as you can access the file directly, it should work.
 
 Once you've got access to your files somehow, simply do the following:
@@ -27,7 +29,13 @@ Once you've got access to your files somehow, simply do the following:
 1. Go to your Guilded server settings.
 2. Click on 'Emotes' on the left-hand sidebar
 3. Click on the 'import an external emote pack' option at the top of the Emotes section.
+
+![](https://img.guildedcdn.com/ContentMediaGenericFiles/7ce556cf6ccb68e800c93fd61285eddf-Full.webp?w=802&h=235)
+
 4. Paste the link for the pack and click 'Import'.
+
+![](https://img.guildedcdn.com/ContentMediaGenericFiles/8b3d58867de5764ae9e3879e5c071388-Full.webp?w=519&h=221)
+
 5. You will be prompted as to whether or not you want to add the emotes. 
 6. Click 'Import' again and your emotes should appear in a few moments.
 
